@@ -2,7 +2,6 @@
 using namespace std;
 
 bool isInRegion22(double x, double y) {
-    // Перевірка, чи точка знаходиться в межах трикутника
     if (x >= 0 && y >= 0 && x + y <= 2) {
         return true;
     }
