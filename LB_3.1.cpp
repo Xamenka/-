@@ -6,15 +6,13 @@ int main() {
     cout << "Enter a three-digit number: ";
     cin >> N;
 
-    // Отримуємо окремі цифри числа
-    int hundreds = N / 100;        // Сотні
-    int tens = (N / 10) % 10;      // Десятки
-    int units = N % 10;            // Одиниці
+    int hundreds = N / 100;        
+    int tens = (N / 10) % 10;     
+    int units = N % 10;            
 
-    int product = 1;               // Добуток парних цифр
-    bool hasEven = false;          // Чи є парні цифри
-
-    // Перевіряємо, чи є цифра парною, і обчислюємо добуток
+    int product = 1;               
+    bool hasEven = false;          
+  
     if (hundreds % 2 == 0) {
         product *= hundreds;
         hasEven = true;
@@ -28,7 +26,6 @@ int main() {
         hasEven = true;
     }
 
-    // Виводимо результат
     if (hasEven) {
         cout << "Product of even digits: " << product << endl;
     }
