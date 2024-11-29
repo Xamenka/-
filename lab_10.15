@@ -1,0 +1,33 @@
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    const int m = 3; // кількість рядків
+    const int n = 3; // кількість стовпців
+    int array[m][n];
+
+    // Введення значень масиву користувачем
+    cout << "Enter the elements of the array (" << m << " rows and " << n << " columns):" << endl;
+    for (int i = 0; i < m; i++) {
+        for (int j = 0; j < n; j++) {
+            cout << "Element [" << i + 1 << "][" << j + 1 << "]: ";
+            cin >> array[i][j];
+        }
+    }
+
+    // Обчислення суми елементів по діагоналях
+    int mainDiagonalSum = 0; // сума головної діагоналі
+    int secondaryDiagonalSum = 0; // сума побічної діагоналі
+
+    for (int i = 0; i < m; i++) {
+        mainDiagonalSum += array[i][i]; // елементи головної діагоналі
+        secondaryDiagonalSum += array[i][n - 1 - i]; // елементи побічної діагоналі
+    }
+
+    // Виведення результатів
+    cout << "Sum of main diagonal: " << mainDiagonalSum << endl;
+    cout << "Sum of secondary diagonal: " << secondaryDiagonalSum << endl;
+
+    return 0;
+}

@@ -1,0 +1,45 @@
+
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+
+using namespace std;
+
+int main() {
+    // Встановлюємо генератор випадкових чисел
+    srand(static_cast<unsigned int>(time(0)));
+
+    // Задаємо розмір масиву
+    const int SIZE = 10;
+    int arr[SIZE]; // Статичний масив
+
+    // Генеруємо випадкові числа і заповнюємо масив
+    for (int i = 0; i < SIZE; ++i) {
+        arr[i] = rand() % 100; // Генеруємо числа від 0 до 99
+    }
+
+    // Виводимо згенерований масив
+    cout << "Generated array: ";
+    for (int i = 0; i < SIZE; ++i) {
+        cout << arr[i] << " "; // Виводимо кожен елемент масиву
+    }
+    cout << endl;
+
+    // Запитуємо користувача ввести число A
+    int A;
+    cout << "Enter a number A: ";
+    cin >> A;
+
+    // Підраховуємо кількість елементів, більших за A
+    int count = 0;
+    for (int i = 0; i < SIZE; ++i) {
+        if (arr[i] > A) {
+            count++;
+        }
+    }
+
+    // Виводимо результат
+    cout << "Number of elements greater than " << A << ": " << count << endl;
+
+    return 0;
+}

@@ -1,0 +1,51 @@
+
+#include <iostream>
+using namespace std;
+
+// Структура для зберігання часу
+struct Time {
+    int hours;   // години
+    int minutes; // хвилини
+};
+
+// Функція для корекції часу
+void normalizeTime(int &hours, int &minutes) {
+    if (minutes >= 60) {
+        hours += minutes / 60; // додати години
+        minutes %= 60;         // залишити тільки хвилини
+    }
+    if (hours >= 24) {
+        hours %= 24;           // залишити години в межах 0-23
+    }
+}
+
+int main() {
+    Time startTime; // початковий час
+
+    // Введення значень годин та хвилин
+    cout << "Enter hours (0-23): ";
+    cin >> startTime.hours;
+    cout << "Enter minutes (0-59): ";
+    cin >> startTime.minutes;
+
+    // Перевірка правильності введених значень
+    if (startTime.hours < 0 || startTime.hours >= 24 || startTime.minutes < 0 || startTime.minutes >= 60) {
+        cout << "Invalid input! Please enter hours between 0-23 and minutes between 0-59." << endl;
+        return 1; // вихід з програми з кодом помилки
+    }
+
+    int additionalMinutes; // кількість хвилин для додавання
+    cout << "Enter additional minutes: ";
+    cin >> additionalMinutes;
+
+    // Додаємо хвилини до початкового часу
+    startTime.minutes += additionalMinutes;
+
+    // Нормалізуємо час
+    normalizeTime(startTime.hours, startTime.minutes);
+
+    // Виводимо результат у форматі ГГ:ХХ
+    cout << "New time: " << startTime.hours << ":" << (startTime.minutes < 10 ? "0" : "") << startTime.minutes << endl;
+
+    return 0;
+}
