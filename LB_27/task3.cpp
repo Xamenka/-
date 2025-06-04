@@ -6,7 +6,7 @@ const int DivideByZero = 111;
 float internaldiv(float arg1, float arg2)
 {
     if (arg2 == 0.0)
-        throw DivideByZero; // Throw an exception if division by zero
+        throw DivideByZero; 
     return arg1 / arg2;
 }
 
@@ -18,8 +18,8 @@ int main(void)
         cin >> b;
         try
         {
-            r = internaldiv(a, b); // Try to perform division
-            cout << r << endl;      // If successful, print the result
+            r = internaldiv(a, b); 
+            cout << r << endl;     
         }
         catch (int e)
         {
