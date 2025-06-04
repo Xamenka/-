@@ -1,6 +1,5 @@
 #include <iostream>
-#include <stdexcept>  // Подключаем заголовок для исключений
-
+#include <stdexcept>  
 using namespace std;
 
 int main(void) {
@@ -8,7 +7,6 @@ int main(void) {
     cin >> b;
 
     try {
-        // Проверка на деление на ноль
         if (b == 0) {
             throw runtime_error("Your input is not valid, you can't divide by zero.");
         }
@@ -16,7 +14,6 @@ int main(void) {
         cout << c << endl;
     }
     catch (const runtime_error& e) {
-        // Обработка исключения
         cerr << e.what() << endl;
     }
 
