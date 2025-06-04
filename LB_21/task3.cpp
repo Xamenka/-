@@ -1,6 +1,6 @@
 #include <iostream>
 #include <string>
-#include <sstream>  // Подключаем для работы с istringstream
+#include <sstream>  
 
 class FlightBooking {
 public:
