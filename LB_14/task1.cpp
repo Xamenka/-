@@ -3,19 +3,19 @@
 #include <ctime>
 
 int main() {
-    std::srand(std::time(0)); // Ініціалізація генератора випадкових чисел
+    std::srand(std::time(0)); 
     
     int size;
     std::cout << "Enter array size: ";
     std::cin >> size;
     
-    double* arr = new double[size]; // Виділення динамічної пам'яті
+    double* arr = new double[size]; 
     
     int positiveCount = 0, negativeCount = 0;
     
     std::cout << "Generated array: ";
     for (int i = 0; i < size; i++) {
-        arr[i] = -2.0 + static_cast<double>(std::rand()) / RAND_MAX * 4.0; // Генерація випадкових чисел у діапазоні (-2, 2)
+        arr[i] = -2.0 + static_cast<double>(std::rand()) / RAND_MAX * 4.0; 
         std::cout << arr[i] << " ";
         
         if (arr[i] > 0) positiveCount++;
