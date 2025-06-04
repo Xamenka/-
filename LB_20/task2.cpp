@@ -6,11 +6,10 @@ class Square
 {
 public:
     Square(double side);
-    void setSide(double side);  // метод для зміни сторони
-    double getSide() const;  // метод для отримання сторони
-    double getArea() const;  // метод для отримання площі
-    void print() const;  // метод для виведення даних
-
+    void setSide(double side);  
+    double getSide() const; 
+    double getArea() const; 
+    void print() const;  
 private:
     double side;
     double area;
@@ -24,10 +23,10 @@ Square::Square(double side)
 
 void Square::setSide(double side)
 {
-    if (side > 0)  // перевірка, щоб сторона була позитивною
+    if (side > 0)  
     {
         this->side = side;
-        this->area = side * side;  // оновлення площі
+        this->area = side * side;  
     }
     else
     {
@@ -53,10 +52,10 @@ void Square::print() const
 int main()
 {
     Square s(4);
-    s.print();  // Виведемо початкові значення
+    s.print(); 
     s.setSide(2.0);
-    s.print();  // Виведемо нові значення після зміни сторони
-    s.setSide(-33.0);  // Спробуємо задати негативну сторону
-    s.print();  // Перевіримо результат
+    s.print();  
+    s.setSide(-33.0);  
+    s.print();  
     return 0;
 }
