@@ -1,7 +1,6 @@
 #include <iostream>
 using namespace std;
 
-// Базовий клас
 class Tree {
 public:
     virtual char getSymbol() = 0; // чиста віртуальна функція: символ для побудови
@@ -22,7 +21,6 @@ public:
     }
 };
 
-// Похідний клас 1 — символ '*'
 class TreeStar : public Tree {
 public:
     char getSymbol() override {
@@ -30,7 +28,6 @@ public:
     }
 };
 
-// Похідний клас 2 — символ '+'
 class TreePlus : public Tree {
 public:
     char getSymbol() override {
@@ -38,7 +35,6 @@ public:
     }
 };
 
-// Похідний клас 3 — символ '@'
 class TreeAt : public Tree {
 public:
     char getSymbol() override {
@@ -51,7 +47,6 @@ int main() {
     cout << "Enter the height of the trees: ";
     cin >> height;
 
-    // Масив вказівників на дерева
     Tree* trees[3];
     trees[0] = new TreeStar();
     trees[1] = new TreePlus();
