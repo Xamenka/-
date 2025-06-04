@@ -3,12 +3,12 @@
 #include <ctime>
 
 int main() {
-    std::srand(std::time(0)); // Ініціалізація генератора випадкових чисел
+    std::srand(std::time(0)); 
     
     const int rows = 3, cols = 3;
-    int** matrix = new int*[rows]; // Виділення пам'яті для рядків
+    int** matrix = new int*[rows]; 
     for (int i = 0; i < rows; i++) {
-        matrix[i] = new int[cols]; // Виділення пам'яті для стовпців
+        matrix[i] = new int[cols]; 
     }
     
     int evenCount = 0, oddCount = 0;
@@ -16,7 +16,7 @@ int main() {
     std::cout << "Generated matrix:" << std::endl;
     for (int i = 0; i < rows; i++) {
         for (int j = 0; j < cols; j++) {
-            matrix[i][j] = std::rand() % 100; // Генерація випадкових чисел
+            matrix[i][j] = std::rand() % 100; 
             std::cout << matrix[i][j] << " ";
             
             if (matrix[i][j] % 2 == 0) evenCount++;
@@ -41,9 +41,9 @@ int main() {
     std::cout << "Number of odd numbers: " << oddCount << std::endl;
     
     for (int i = 0; i < rows; i++) {
-        delete[] matrix[i]; // Звільнення пам'яті для кожного рядка
+        delete[] matrix[i]; 
     }
-    delete[] matrix; // Звільнення пам'яті для масиву покажчиків
+    delete[] matrix; 
     
     return 0;
 }
