@@ -16,7 +16,6 @@ void print(const Person* person)
 
 int main()
 {
-    // Створення об'єктів класу Person
     Person person1;
     person1.name = "Harry";
     person1.age = 23;
@@ -29,7 +28,6 @@ int main()
     person3.name = "Bob";
     person3.age = 27;
 
-    // Виклик функції print для кожного об'єкта
     print(&person1);
     print(&person2);
     print(&person3);
