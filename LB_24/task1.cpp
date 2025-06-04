@@ -20,7 +20,6 @@ private:
     int gcd(int a, int b);
 };
 
-// Функція знаходження НСД (алгоритм Евкліда)
 int Fraction::gcd(int a, int b) {
     while (b != 0) {
         int temp = b;
@@ -30,12 +29,10 @@ int Fraction::gcd(int a, int b) {
     return abs(a);
 }
 
-// Конструктор, який автоматично скорочує дріб
 Fraction::Fraction(int num, int den) : numerator(num), denominator(den) {
     reduce();
 }
 
-// Метод для скорочення дробу
 void Fraction::reduce() {
     int divisor = gcd(abs(numerator), abs(denominator));
     numerator /= divisor;
@@ -47,7 +44,6 @@ void Fraction::reduce() {
     }
 }
 
-// Метод перетворення дробу в рядок
 string Fraction::toString() {
     if (abs(numerator) >= denominator) {
         int whole = numerator / denominator;
@@ -58,12 +54,10 @@ string Fraction::toString() {
     return to_string(numerator) + "/" + to_string(denominator);
 }
 
-// Метод перетворення дробу в число з плаваючою крапкою
 double Fraction::toDouble() {
     return static_cast<double>(numerator) / denominator;
 }
 
-// Методи порівняння дробів
 bool Fraction::isGreaterThan(Fraction that) {
     return this->toDouble() > that.toDouble();
 }
