@@ -9,7 +9,7 @@ int main() {
     int vector[size];
     
     for (int *p = vector; p < vector + size; ++p) {
-        *p = std::rand() % 100;	//* є вказівником і буде використовуватися для зберігання інформації про місцезнаходження даних типу int. 
+        *p = std::rand() % 100;	
     }
     
     std::cout << "Array: ";
