@@ -6,14 +6,12 @@ using namespace std;
 
 class Fraction {
 public:
-    // Конструктор з перевіркою на 0 та нормалізацією знаку
     Fraction(int numerator, int denominator) {
         if (denominator == 0) {
             cout << "Error: division by zero is not allowed." << endl;
             exit(1);
         }
 
-        // Переносимо знак до чисельника
         if (denominator < 0) {
             numerator = -numerator;
             denominator = -denominator;
@@ -23,7 +21,6 @@ public:
         this->denominator = denominator;
     }
 
-    // Метод для текстового представлення дробу
     string toString() {
         int wholePart = numerator / denominator;
         int remainder = abs(numerator % denominator);
@@ -39,7 +36,6 @@ public:
         return to_string(wholePart) + " " + to_string(remainder) + "/" + to_string(denominator);
     }
 
-    // Метод для десяткового представлення
     double toDouble() {
         return (double)numerator / denominator;
     }
